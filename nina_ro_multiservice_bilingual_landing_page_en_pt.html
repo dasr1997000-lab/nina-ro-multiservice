@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NINA RO MULTISERVICE</title>
+  <meta name="description" content="Nina Ro Multiservice – Technology Support, General Services, Sales Management, Real Estate" />
+  <style>
+    :root{
+      --bg:#0e0f11; --panel:#14161a; --ink:#ececec; --muted:#a7abb0; --line:#24282e; --btn:#1c1f24; --btn2:#0e1013;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1140px,92%);margin-inline:auto}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,rgba(14,15,17,.85),rgba(14,15,17,.65));backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:.8rem;font-weight:800}
+    .logo{width:42px;height:42px;border-radius:12px;border:1.5px solid #8f949a;background:linear-gradient(145deg,#0f1113,#171a1f);display:grid;place-items:center}
+    .logo svg{width:26px;height:26px;color:#c9ccd0}
+    .nav-links a{padding:.5rem .8rem;color:var(--muted);font-weight:700}
+    .nav-links a:hover{color:var(--ink)}
+    .lang{display:flex;gap:.4rem}
+    .lang button{cursor:pointer;background:transparent;border:1px solid var(--line);color:var(--muted);padding:.42rem .7rem;border-radius:.6rem;font-weight:800}
+    .lang button.active{color:var(--ink);border-color:#9aa0a6}
+
+    /* Hero */
+    .hero{padding:92px 0 56px;border-bottom:1px solid var(--line);background:radial-gradient(900px 380px at 50% -8%,#1a1d22 6%,transparent 60%),var(--bg)}
+    .chip{display:inline-block;border:1px solid var(--line);border-radius:999px;color:var(--muted);padding:.34rem .7rem;font-size:.86rem}
+    h1{margin:.6rem 0 .6rem;font-size:clamp(2rem,3.6vw,3.1rem);letter-spacing:.3px}
+    .lead{color:var(--muted);max-width:820px}
+    .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.1rem}
+    .btn{display:inline-flex;align-items:center;gap:.55rem;background:var(--btn);border:1px solid var(--line);padding:.76rem 1rem;border-radius:.9rem;font-weight:700}
+    .btn:hover{background:#242930}
+    .btn.ghost{background:var(--btn2)}
+
+    /* Sections */
+    section{padding:72px 0;border-bottom:1px solid var(--line)}
+    h2{margin:0 0 .8rem;font-size:clamp(1.35rem,2.2vw,1.9rem)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+    .card h3{margin:.2rem 0 .4rem;font-size:1.05rem}
+    .card p{color:var(--muted);margin:0}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+    label{display:block;margin-bottom:.42rem;color:var(--muted);font-size:.92rem}
+    input,textarea{width:100%;background:#0c0d0f;border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:.9rem 1rem;font-size:1rem}
+    textarea{min-height:140px;resize:vertical}
+
+    /* Footer */
+    footer{padding:36px 0;color:var(--muted)}
+    .footer-wrap{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+    .chips{display:flex;gap:.6rem;flex-wrap:wrap}
+    .chip{margin-top:.2rem}
+
+    /* WhatsApp Floating */
+    .wa{position:fixed;right:20px;bottom:20px;background:#25D366;color:#001;display:flex;align-items:center;gap:.5rem;border-radius:999px;padding:.7rem 1rem;font-weight:800;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+    .wa svg{width:20px;height:20px}
+
+    /* Responsive */
+    @media (max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}.contact{grid-template-columns:1fr}}
+    @media (max-width:560px){.nav-links{display:none}.cards{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="brand">
+        <div class="logo" title="NR">
+          <!-- Embedded minimal NR monogram in SVG (black/gray style) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M6 17V7h4l8 10V7"/>
+          </svg>
+        </div>
+        <span>NINA RO MULTISERVICE</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="lang" role="group" aria-label="Language switcher">
+        <button type="button" class="active" data-lang="en">EN</button>
+        <button type="button" data-lang="pt">PT</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="chip" data-i18n="hero.tag">Black & Gray • Multiservice</span>
+      <h1 data-i18n="hero.title">Empowering Businesses with Technology, Services, and Trust.</h1>
+      <p class="lead" data-i18n="hero.subtitle">We deliver reliable, bilingual solutions across technology support, general services, sales management, and real estate — tailored to your goals.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#services" data-i18n="hero.cta1">Explore Services</a>
+        <a class="btn ghost" href="#contact" data-i18n="hero.cta2">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 data-i18n="about.heading">About Us</h2>
+      <p class="lead" data-i18n="about.body">At <strong>Nina Ro Multiservice</strong>, excellence comes from versatility. Our team blends innovation, reliability, and hands‑on experience to provide comprehensive solutions across multiple sectors. More than a provider — we partner in your success.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <h2 data-i18n="services.heading">Our Core Services</h2>
+      <p class="lead" data-i18n="services.lead">High‑quality results across four pillars:</p>
+      <div class="cards">
+        <article class="card">
+          <span class="chip" data-i18n="svc.tech.badge">Technology</span>
+          <h3 data-i18n="svc.tech.title">Technology Support</h3>
+          <p data-i18n="svc.tech.body">IT setup, network configuration, troubleshooting, upgrades, and ongoing optimization to keep your operations running smoothly.</p>
+        </article>
+        <article class="card">
+          <span class="chip" data-i18n="svc.general.badge">General</span>
+          <h3 data-i18n="svc.general.title">General Services</h3>
+          <p data-i18n="svc.general.body">Maintenance, logistics, procurement coordination, and on‑demand support tailored to day‑to‑day business needs.</p>
+        </article>
+        <article class="card">
+          <span class="chip" data-i18n="svc.sales.badge">Sales</span>
+          <h3 data-i18n="svc.sales.title">Sales Management</h3>
+          <p data-i18n="svc.sales.body">Sales strategy, pipeline structure, CRM practices, and performance insights that drive sustainable growth.</p>
+        </article>
+        <article class="card">
+          <span class="chip" data-i18n="svc.real.badge">Real Estate</span>
+          <h3 data-i18n="svc.real.title">Real Estate</h3>
+          <p data-i18n="svc.real.body">Property scouting, rentals, management, and investment guidance backed by market awareness.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container contact">
+      <div class="panel">
+        <h2 data-i18n="contact.heading">Contact Us</h2>
+        <p class="lead" data-i18n="contact.sub">Tell us about your needs. We’ll reply promptly.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+          <a class="btn" href="mailto:ninaromultiservice@gmail.com">ninaromultiservice@gmail.com</a>
+          <a class="btn" href="tel:+3213308156">+3213308156</a>
+          <a class="btn" href="tel:+6892490598">+6892490598</a>
+          <span class="btn ghost" data-i18n="contact.lang">English • Português</span>
+        </div>
+      </div>
+      <div class="panel">
+        <form onsubmit="event.preventDefault(); alert(currentLang==='en' ? 'Thanks! We will contact you soon.' : 'Obrigado! Entraremos em contato em breve.'); this.reset();">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label data-i18n="form.name">Your name</label>
+              <input type="text" required placeholder="John / Maria" />
+            </div>
+            <div>
+              <label data-i18n="form.email">Email</label>
+              <input type="email" required placeholder="you@example.com" />
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <label data-i18n="form.msg">Message</label>
+            <textarea required placeholder=""></textarea>
+          </div>
+          <div style="margin-top:14px;display:flex;align-items:center;justify-content:space-between">
+            <span style="color:var(--muted)" data-i18n="form.privacy">We keep your information private.</span>
+            <button class="btn" type="submit" data-i18n="form.send">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong>NINA RO MULTISERVICE</strong>
+        <div style="margin-top:6px;color:var(--muted)" data-i18n="foot.tag">Black & Gray • Multiservice Company</div>
+      </div>
+      <div class="chips">
+        <a class="chip" href="mailto:ninaromultiservice@gmail.com">Email</a>
+        <a class="chip" href="tel:+3213308156">+3213308156</a>
+        <a class="chip" href="tel:+6892490598">+6892490598</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button with prefilled greeting -->
+  <a class="wa" id="waLink" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 3C9.383 3 4 8.383 4 15c0 2.281.625 4.418 1.715 6.254L4 29l7.93-1.656C13.844 28.457 14.887 29 16 29c6.617 0 12-5.383 12-12S22.617 3 16 3Z" fill="#25D366"/>
+      <path d="M23.293 18.652c-.125-.203-.457-.324-.953-.566-.496-.242-2.938-1.445-3.391-1.609-.453-.164-.785-.246-1.117.246-.332.492-1.285 1.61-1.578 1.941-.293.332-.578.371-1.074.129-.496-.242-2.094-.77-3.99-2.457-1.477-1.32-2.473-2.949-2.766-3.441-.293-.492-.031-.758.211-1 .219-.217.492-.566.738-.848.242-.285.324-.492.496-.82.164-.328.082-.617-.04-.86-.125-.242-1.117-2.695-1.531-3.695-.402-.973-.812-.84-1.117-.84-.285-.016-.617-.02-.949-.02-.332 0-.867.125-1.32.617-.453.492-1.734 1.695-1.734 4.133 0 2.438 1.777 4.797 2.027 5.129.25.332 3.5 5.34 8.469 7.27 1.184.512 2.105.816 2.824 1.039 1.188.379 2.27.324 3.125.195.953-.145 2.938-1.203 3.352-2.367.414-1.164.414-2.16.289-2.363Z" fill="#fff"/>
+    </svg>
+    <span data-i18n="wa.chat">Chat on WhatsApp</span>
+  </a>
+
+  <script>
+    // i18n dictionary
+    const i18n={
+      en:{'nav.about':'About','nav.services':'Services','nav.contact':'Contact','hero.tag':'Black & Gray • Multiservice','hero.title':'Empowering Businesses with Technology, Services, and Trust.','hero.subtitle':'We deliver reliable, bilingual solutions across technology support, general services, sales management, and real estate — tailored to your goals.','hero.cta1':'Explore Services','hero.cta2':'Contact Us','about.heading':'About Us','about.body':'At <strong>Nina Ro Multiservice</strong>, excellence comes from versatility. Our team blends innovation, reliability, and hands‑on experience to provide comprehensive solutions across multiple sectors. More than a provider — we partner in your success.','services.heading':'Our Core Services','services.lead':'High‑quality results across four pillars:','svc.tech.badge':'Technology','svc.tech.title':'Technology Support','svc.tech.body':'IT setup, network configuration, troubleshooting, upgrades, and ongoing optimization to keep your operations running smoothly.','svc.general.badge':'General','svc.general.title':'General Services','svc.general.body':'Maintenance, logistics, procurement coordination, and on‑demand support tailored to day‑to‑day business needs.','svc.sales.badge':'Sales','svc.sales.title':'Sales Management','svc.sales.body':'Sales strategy, pipeline structure, CRM practices, and performance insights that drive sustainable growth.','svc.real.badge':'Real Estate','svc.real.title':'Real Estate','svc.real.body':'Property scouting, rentals, management, and investment guidance backed by market awareness.','contact.heading':'Contact Us','contact.sub':'Tell us about your needs. We’ll reply promptly.','contact.lang':'English • Português','form.name':'Your name','form.email':'Email','form.msg':'Message','form.privacy':'We keep your information private.','form.send':'Send','foot.tag':'Black & Gray • Multiservice Company','wa.chat':'Chat on WhatsApp'},
+      pt:{'nav.about':'Sobre','nav.services':'Serviços','nav.contact':'Contato','hero.tag':'Preto & Cinza • Multisserviços','hero.title':'Fortalecendo Negócios com Tecnologia, Serviços e Confiança.','hero.subtitle':'Entregamos soluções bilíngues e confiáveis em suporte tecnológico, serviços gerais, gestão de vendas e imóveis — sob medida para seus objetivos.','hero.cta1':'Ver Serviços','hero.cta2':'Fale Conosco','about.heading':'Sobre Nós','about.body':'Na <strong>Nina Ro Multiservice</strong>, a excelência nasce da versatilidade. Unimos inovação, confiabilidade e experiência prática para soluções completas em diversos setores. Mais do que fornecedores — somos parceiros do seu sucesso.','services.heading':'Nossos Principais Serviços','services.lead':'Resultados de alta qualidade em quatro pilares:','svc.tech.badge':'Tecnologia','svc.tech.title':'Suporte Tecnológico','svc.tech.body':'Implantação de TI, configuração de redes, troubleshooting, upgrades e otimização contínua para manter suas operações estáveis.','svc.general.badge':'Geral','svc.general.title':'Serviços Gerais','svc.general.body':'Manutenção, logística, compras e suporte sob demanda para as necessidades do dia a dia.','svc.sales.badge':'Vendas','svc.sales.title':'Gestão de Vendas','svc.sales.body':'Estratégia comercial, estrutura de pipeline, práticas de CRM e insights de desempenho para crescimento sustentável.','svc.real.badge':'Imóveis','svc.real.title':'Imóveis','svc.real.body':'Prospecção, locação, administração e orientação para investimentos com visão de mercado.','contact.heading':'Fale Conosco','contact.sub':'Conte suas necessidades. Responderemos rapidamente.','contact.lang':'Inglês • Português','form.name':'Seu nome','form.email':'E-mail','form.msg':'Mensagem','form.privacy':'Mantemos suas informações em sigilo.','form.send':'Enviar','foot.tag':'Empresa de Multisserviços – Preto & Cinza','wa.chat':'Falar no WhatsApp'}
+    };
+
+    // helpers
+    const $$=sel=>Array.from(document.querySelectorAll(sel));
+    let currentLang='en';
+    function applyLang(lang){
+      currentLang=lang; $$('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+      const dict=i18n[lang];
+      $$('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); const v=dict[k]||''; if(v.includes('<')) el.innerHTML=v; else el.textContent=v;});
+      document.documentElement.lang=(lang==='pt'?'pt':'en');
+      updateWaLink();
+    }
+
+    // WhatsApp link with prefilled message by language
+    function updateWaLink(){
+      const base='https://wa.me/13213308156';
+      const msg=currentLang==='en'? 'Hello%20Nina%20Ro%20Multiservice!%20I%27d%20like%20to%20inquire%20about%20your%20services.' : 'Olá%20Nina%20Ro%20Multiservice!%20Gostaria%20de%20saber%20sobre%20seus%20serviços.';
+      const link=document.getElementById('waLink');
+      link.href=`${base}?text=${msg}`;
+    }
+
+    // init
+    $$('.lang button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+    applyLang('en');
+  </script>
+</body>
+</html>
